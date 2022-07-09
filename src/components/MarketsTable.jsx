@@ -135,7 +135,7 @@ export function MarketsTable({ width, accId }) {
         </Table>
       </TableContainer>
       <TablePagination
-        rowsPerPageOptions={[5, 10]}
+        rowsPerPageOptions={[10, 10]}
         component="div"
         count={rows.length}
         rowsPerPage={rowsPerPage}

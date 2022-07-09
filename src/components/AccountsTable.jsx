@@ -125,7 +125,7 @@ export function AccountsTable({ width }) {
         </Table>
       </TableContainer>
       <TablePagination
-        rowsPerPageOptions={[5, 10]}
+        rowsPerPageOptions={[10, 10]}
         component="div"
         count={100}
         rowsPerPage={rowsPerPage}
