@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+::selection {
+  background-color: #777777;
+  color: $clr5;
+}
+
+html {
+  text-align: center;
+  font-family: 'Ubuntu-Light';
+  font-size: 17px;
+  letter-spacing: 1.5px;
+  color: $clr5;
+  line-height: 1.6;
+}
+.app{
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  color: #ffffff;
+  overflow-x: hidden;
+  background-color: $clr2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Ubuntu-Medium';
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 0.6em;
+}
+p {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+input,
+select,
+a,
+button {
+  cursor: pointer;
+
+}
+.btn{
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(199, 198, 198);
+  max-width: 148px;
+}

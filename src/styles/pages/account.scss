@@ -1,0 +1,34 @@
+.account-description-page{
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    .account-description-header{
+        margin-top: 3rem;
+        width: fit-content;
+        .account-title{
+            margin-bottom: 4rem;
+        }
+    }  
+}
+.table-description-section{
+    justify-content: space-between;
+    width: 80%;
+ 
+}  
+.table-description-section{
+    .protocol-table{
+        margin-bottom: 2.5rem;
+     }
+     .market-table{
+        justify-content: space-around;
+     }
+}
+
+@media screen and (max-width: 414px) {
+    .acc-id-title{
+        font-size: 12px;
+    }
+}
+
+    
+

@@ -1,0 +1,21 @@
+tbody, th, td, .MuiTablePagination-root{
+    background-color: #232426 !important;
+    color: $clr1 !important;
+    font-size: large;
+    border-bottom: 0.0002px solid #4ec6ca2d !important;
+}
+.MuiPaper-root{
+    border: none;
+    background-color: #4ec6ca2d!important;
+}
+.acc-id-link{
+    color: $clr5;
+    cursor: pointer;
+}
+th{
+    font-family: 'Ubuntu-Medium' !important;
+}
+td{
+    color: $clr4 !important;
+}
+
