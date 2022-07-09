@@ -11,7 +11,7 @@ import { useQuery, gql } from "@apollo/client";
 
 const GET_MARKETS = gql`
   query getMarkets($acc: String) {
-    positions(where: { account: $acc }) {
+    positions(where: { account: $acc, isActive: false }) {
       market {
         id
         asset {
