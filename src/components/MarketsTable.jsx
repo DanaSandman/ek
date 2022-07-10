@@ -62,9 +62,6 @@ export function MarketsTable({ width, accId }) {
   const organizeData = (data) => {
     const rows = [];
     data.positions.map((pos) => {
-      console.log("pos.pos.withdrawn", pos.withdrawn);
-      console.log("from", formatUnits(pos.withdrawn));
-
       return rows.push({
         marketId: pos.market.id,
         assetName: pos.market.asset.name,
