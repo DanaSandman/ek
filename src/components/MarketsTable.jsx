@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { formatUnits } from "@ethersproject/units";
+
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -38,7 +40,6 @@ const COLUMNS = [
 ];
 
 export function MarketsTable({ width, accId }) {
-
   const [rows, setRows] = useState([]);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -54,17 +55,24 @@ export function MarketsTable({ width, accId }) {
     }
   }, [data]);
 
+  const formatWei = (wei, decimal) => {
+    return parseFloat(formatUnits(wei, decimal)).toFixed(4);
+  };
+
   const organizeData = (data) => {
     const rows = [];
     data.positions.map((pos) => {
+      console.log("pos.pos.withdrawn", pos.withdrawn);
+      console.log("from", formatUnits(pos.withdrawn));
+
       return rows.push({
         marketId: pos.market.id,
         assetName: pos.market.asset.name,
         decimals: pos.market.asset.decimals,
-        borrowed: pos.borrowed,
-        deposited: pos.deposited,
-        withdrawn: pos.withdrawn,
-        repaid: pos.repaid,
+        deposited: formatWei(pos.deposited, pos.market.asset.decimals),
+        withdrawn: formatWei(pos.withdrawn, pos.market.asset.decimals),
+        borrowed: formatWei(pos.borrowed, pos.market.asset.decimals),
+        repaid: formatWei(pos.repaid, pos.market.asset.decimals),
       });
     });
     return rows;
@@ -81,7 +89,7 @@ export function MarketsTable({ width, accId }) {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
-  
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
